@@ -1,24 +1,9 @@
-/*
-resize
-
-scroll
-
-load
-
-keydown
-
-Select
-
-*/
-
-
-
 document.querySelectorAll('.destination').forEach(element => {
     element.addEventListener('click', () => {
         element.style.backgroundColor = 'mediumturquoise';
+        element.style.padding = '3%';
     })
 })
-
 
 document.querySelectorAll('.btn').forEach(element => {
     element.addEventListener('click', () => {
@@ -68,6 +53,17 @@ const thirdImg = document.querySelector('.inverse-content img');
 thirdImg.addEventListener('mousemove', () => {
     thirdImg.style.border = '5px dashed green';
 })
+
+const greenBody = document.querySelector('body');
+greenBody.addEventListener('keyup', () => {
+    greenBody.style.backgroundColor = 'green';
+    greenBody.style.transition = 'transform 2s';
+})
+
+const redBody = document.querySelector('body');
+    redBody.addEventListener('keydown', () => {
+        redBody.style.backgroundColor = 'red';
+    })
 
 
 
