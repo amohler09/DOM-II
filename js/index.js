@@ -1,3 +1,10 @@
+
+const stopNav = document.querySelector('.nav');
+stopNav.addEventListener('click', (event) => {
+    event.preventDefault();
+})
+
+
 document.querySelectorAll('.destination').forEach(element => {
     element.addEventListener('click', () => {
         element.style.backgroundColor = 'mediumturquoise';
@@ -51,7 +58,7 @@ secondImg.addEventListener('dragstart', () => {
 
 const thirdImg = document.querySelector('.inverse-content img');
 thirdImg.addEventListener('mousemove', () => {
-    thirdImg.style.border = '5px dashed green';
+    thirdImg.style.border = '5px dashed red';
 })
 
 const greenBody = document.querySelector('body');
