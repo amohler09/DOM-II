@@ -5,8 +5,6 @@ scroll
 
 load
 
-wheel
-
 keydown
 
 Select
@@ -15,12 +13,19 @@ Select
 
 
 
+document.querySelectorAll('.destination').forEach(element => {
+    element.addEventListener('click', () => {
+        element.style.backgroundColor = 'mediumturquoise';
+    })
+})
+
 
 document.querySelectorAll('.btn').forEach(element => {
     element.addEventListener('click', () => {
         element.style.backgroundColor = 'greenyellow';
         element.style.fontFamily = 'courier new';
         element.style.fontSize = '2.5rem';
+        event.stopPropagation();
     })
 })
 
@@ -41,10 +46,31 @@ headerImg.addEventListener('mouseleave', () => {
     headerImg.style.filter = 'drop-shadow(15px 15px 10px)';
 })
 
-const header = document.querySelector('img');
-header[1].addEventListener('drag', () => {
-    header.style.color = 'green';
+const lastImg = document.querySelector('.content-destination img');
+lastImg.addEventListener('wheel', () => {
+    lastImg.style.transform = 'scale(2)';
+    lastImg.style.transition = 'transform 2s';
 })
+
+document.querySelectorAll('h2').forEach(element => {
+    element.addEventListener('copy', () => {
+        element.style.backgroundColor = 'red';
+        element.style.color = 'green';
+    })
+})
+
+const secondImg = document.querySelector('.content-section img');
+secondImg.addEventListener('dragstart', () => {
+    secondImg.style.filter = 'drop-shadow(15px 15px 10px cadetblue)';
+})
+
+const thirdImg = document.querySelector('.inverse-content img');
+thirdImg.addEventListener('mousemove', () => {
+    thirdImg.style.border = '5px dashed green';
+})
+
+
+
 
 
 
